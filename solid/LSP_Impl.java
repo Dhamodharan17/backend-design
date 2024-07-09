@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 
 
 public class With_LSP {
-    // LSP -> whenever parent is required, we should able to pass child and successfully perform the operation
+    // LSP -> whenever parent is required, we should able to pass child and successfully perform the operation, so we should able to code such
     public static void main(String[] args) {
         
         // Substituting HomeLoan (subtype) for SecureLoan (supertype)
