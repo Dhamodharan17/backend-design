@@ -9,6 +9,7 @@ public class WithOut_LSP {
 
     // Cannot Substituting CreditCardLoan (subtype) LoanPayment SecureLoan (supertype)
         // if we do we get unimplemented error or in production crash
+        // This happens because the subtype does not fully adhere to the contract defined by the supertype.
         CreditCardLoan c = new CreditCardLoan();
         LoanClosureService loanPayment = new LoanClosureService(c);
         loanPayment.foreCloseLoan();//unsupported message
