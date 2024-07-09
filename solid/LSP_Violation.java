@@ -4,15 +4,20 @@ import lombok.AllArgsConstructor;
 
 
 public class WithOut_LSP {
-    
+
     public static void main(String[] args) {
-        LoanPayment loanPayment = new CreditCardLoan();
+
+    // Cannot Substituting CreditCardLoan (subtype) LoanPayment SecureLoan (supertype)
+        // if we do we get unimplemented error or in production crash
+        CreditCardLoan c = new CreditCardLoan();
+        LoanClosureService loanPayment = new LoanClosureService(c);
         loanPayment.foreCloseLoan();//unsupported message
     }
 }
 
 @AllArgsConstructor
 class LoanClosureService{
+    // Cannot Substituting CreditCardLoan (subtype) LoanPayment SecureLoan (supertype)
     private LoanPayment loanPayment;
     public void foreCloseLoan(){
         loanPayment.foreCloseLoan();
